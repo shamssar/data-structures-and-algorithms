@@ -1,13 +1,15 @@
 # Reverse an Array
 
-## Madea function takes an array as an argument
- ## return an array with elements in reversed order.
+## Made a function takes an array as an argument return an array with elements in reversed order.
 
 
 
  # Whiteboard Process:
 
  ![image](./miro22.png)
+
+ ## Screenshoot for testing my Code:
+ ![image1](./SCREEN2222.png)
 
 
 # Approach & Efficiency:
