@@ -1,9 +1,12 @@
-# insertShiftArray
+#  Insert to Middle of an Array
 ## Write a function its takes an array and a number to be added in the middle of the array.
 
 # Whiteboard Process:
+![image](./insertShitArray.png)
 
 
+# Screenshoot For testing:
+![image](./SCGGGGG.png)
 
 
 
