@@ -1,5 +1,5 @@
 'use strict';
-const LinkedList= require('../lib/linkedlist');
+const LinkedList= require('./lib/linkedlist');
 
 class LinkedList {
 
