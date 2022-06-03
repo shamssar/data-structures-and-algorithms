@@ -58,5 +58,7 @@ class LinkedList {
 
     let live= new LinkedList();
     live.print();
-    module.exports= LinkedList;
+
+    module.exports = LinkedList;
+    
 
