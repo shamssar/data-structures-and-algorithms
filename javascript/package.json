@@ -6,7 +6,8 @@
   "scripts": {
     "get-challenge": "`which bash` ./code-challenges/bin/get-challenge.sh",
     "test": "jest",
-    "lint": "eslint '**/*.js'"
+    "lint": "eslint '**/*.js'",
+    "start" : "node index.js"
   },
   "author": "",
   "license": "MIT",
