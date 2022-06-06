@@ -6,8 +6,9 @@ Write a function to take  2 params search key and sorted array. And return the 
 
 
 ## Whiteboard Process
-![image](./Untitled.png)
+![image](./array-binary-search1.PNG.png)
 
+![image1](./array-binary-search.PNG)
 
 
 ## Approach & Efficiency:
