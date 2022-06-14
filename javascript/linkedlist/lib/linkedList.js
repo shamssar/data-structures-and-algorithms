@@ -24,16 +24,10 @@ class LinkedList {
         this.length++;
     }
 
-    print() {
-        let current = this.head;
-        while (current) {
-            console.log(current.value);
-            current = current.next;
-        }
-    }
+    
 
     
-        publicString(){
+        toString(){
             let current = this.head;
             let stringData = "";
             while (current) {
@@ -43,20 +37,9 @@ class LinkedList {
             return stringData;
         }
 
-        publicBoolean(value) {
+       
 
-          let current = this.head;
-          while (current) {
-  
-              if (current.value === value) {
-                  return true;
-              }
-              current = current.next;
-          }
-          return false;
-      }
-
-  // adds a new node with the given value to the end of the list
+ 
   append(newValue) {
     let newNode = new Node(newValue);
     if (this.head === null) {
@@ -72,7 +55,7 @@ class LinkedList {
     }
     this.length++;
   }
-  //adds a new node with the given new value immediately before the first node that has the value specified
+  
   insertBefore(value, newValue) {
     let newNode = new Node(newValue);
     let currentNode = this.head;
@@ -93,7 +76,7 @@ class LinkedList {
       currentNode = currentNode.next;
     }
   }
-  //adds a new node with the given new value immediately after the first node that has the value specified
+
   insertAfter(value, newValue) {
     let newNode = new Node(newValue);
     let currentNode = this.head;
@@ -109,7 +92,6 @@ class LinkedList {
   }
 }
 
-let live= new LinkedList();
-live.print();
+
 
 module.exports = LinkedList;
