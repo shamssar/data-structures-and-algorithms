@@ -5,3 +5,4 @@
 | Linked List       | [link list](../javascript/Linklist/README03.md)
 | Binery search     | [binery search](../javascript/binery%20search/README04.md)
 |linked list class06| [class06](../javascript/linkedlist/README.md)
+|linked-list-kth    | [linked-list-kth](../javascript/linked-list-kth/REAME.md)
