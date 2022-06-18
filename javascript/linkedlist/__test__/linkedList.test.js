@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = require('../lib/linkedList');
+const LinkedList = require('../linked-list/linkedList');
 
 describe("Can successfully instantiate an empty linked list", () => {
   it("creat a linklist", () => {
@@ -80,5 +80,79 @@ describe("Can successfully instantiate an empty linked list", () => {
     List.insertAfter('n', 'c');
     expect(List.toString()).toBe('s -> h -> n -> c -> ');
   });
+  test('Where k is greater than the length of the linked list', () => {
+    let List = new LinkedList();
+    List.insert('s');
+    List.insert('h');
+    List.insert('a');
+    expect(List.kthFromEnd(4)).toBe('Exception');
+  });
+  test('Where k and the length of the list are the same', () => {
+    let List = new LinkedList();
+    List.insert('s');
+    List.insert('h');
+    List.insert('a');
+    expect(List.kthFromEnd(3)).toBe('s');
+  });
+  test('Where k is not a positive integer', () => {
+    let List = new LinkedList();
+    List.insert('s');
+    List.insert('h');
+    List.insert('a');
+    expect(List.kthFromEnd(-1)).toBe('Exception');
+  });
+  test('Where the linked list is of a size 1', () => {
+    let List = new LinkedList();
+    List.insert('s');
+    expect(List.kthFromEnd(1)).toBe('s');
+  });
+  test('where k is not at the end, but somewhere in the middle of the linked list', () => {
+    let List = new LinkedList();
+    List.insert('s');
+    List.insert('h');
+    List.insert('a');
+    expect(List.kthFromEnd(2)).toBe('h');
+  });
+
+  test("zipLists method -test1", () => {
+    let list1 = new LinkedList();
+    let list2 = new LinkedList();
+    let list=new LinkedList();
+    list1.append(1);
+    list1.append(3);
+    list1.append(2);
+    list2.append(5);
+    list2.append(9);
+    list2.append(4);
+    list=list1.zipLists(list1,list2);
+   expect(list.toString()).toBe("{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL");
 });
+
+test("zipLists method -test2", () => {
+  let list1 = new LinkedList();
+  let list2 = new LinkedList();
+  let list=new LinkedList();
+  list1.append(1);
+  list1.append(3);
+  list2.append(5);
+  list2.append(9);
+  list2.append(4);
+  list=list1.zipLists(list1,list2);
+ expect(list.toString()).toBe("{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> NULL");
+});
+
+test("zipLists method -test3", () => {
+  let list1 = new LinkedList();
+    let list2 = new LinkedList();
+    let list=new LinkedList();
+  list1.append(1);
+  list1.append(3);
+  list1.append(2);
+  list2.append(5);
+  list2.append(9);
+  list=list1.zipLists(list1,list2);
+ expect(list.toString()).toBe("{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> NULL");
+});
+});
+
 

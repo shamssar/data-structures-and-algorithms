@@ -1,10 +1,15 @@
 ## whitbord
+
+zipList function 
+![image](./sc/Ziplist.png.jpg)
+
+************************
 append function 
-![image](./append.png.jpg) 
-
+![image](./sc/append.png.jpg) 
+*********************************
 insertafter function 
-![image2](./insertafer.png.jpg)
-
+![image2](./sc/insertafer.png.jpg)
+************************************
 test pased 
-![image3](./test.png)
+![image3](./sc/test.png)
 
