@@ -114,45 +114,43 @@ describe("Can successfully instantiate an empty linked list", () => {
     expect(List.kthFromEnd(2)).toBe('h');
   });
 
-  test("zipLists method -test1", () => {
-    let list1 = new LinkedList();
-    let list2 = new LinkedList();
-    let list=new LinkedList();
-    list1.append(1);
-    list1.append(3);
-    list1.append(2);
-    list2.append(5);
-    list2.append(9);
-    list2.append(4);
-    list=list1.zipLists(list1,list2);
-   expect(list.toString()).toBe("{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL");
+  it("Zip the two linked lists together", () => {
+    const ll1 = new LinkedList();
+    const ll2 = new LinkedList();
+    let ll=new LinkedList();
+    ll1.append(6);
+    ll1.append(3);
+    ll1.append(2);
+    ll2.append(1);
+    ll2.append(8);
+    ll2.append(4);
+    ll=ll1.zipLists(ll1,ll2);
+   expect(ll.toString()).toBe("6 -> 1 -> 3 -> 8 -> 2 -> 4 -> ");
 });
 
-test("zipLists method -test2", () => {
-  let list1 = new LinkedList();
-  let list2 = new LinkedList();
-  let list=new LinkedList();
-  list1.append(1);
-  list1.append(3);
-  list2.append(5);
-  list2.append(9);
-  list2.append(4);
-  list=list1.zipLists(list1,list2);
- expect(list.toString()).toBe("{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> NULL");
+it("Zip the two linked lists together, list2 had one more node", () => {
+  const ll1 = new LinkedList();
+  const ll2 = new LinkedList();
+  let ll=new LinkedList();
+  ll1.append(6);
+  ll1.append(3);
+  ll2.append(5);
+  ll2.append(8);
+  ll2.append(4);
+  ll=ll1.zipLists(ll1,ll2);
+ expect(ll.toString()).toEqual("6 -> 5 -> 3 -> 8 -> 4 -> ");
 });
 
-test("zipLists method -test3", () => {
-  let list1 = new LinkedList();
-    let list2 = new LinkedList();
-    let list=new LinkedList();
-  list1.append(1);
-  list1.append(3);
-  list1.append(2);
-  list2.append(5);
-  list2.append(9);
-  list=list1.zipLists(list1,list2);
- expect(list.toString()).toBe("{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> NULL");
+it("Zip the two linked lists together, list1 had one more node", () => {
+  const ll1 = new LinkedList();
+  const ll2 = new LinkedList();
+  let ll=new LinkedList();
+  ll1.append(6);
+  ll1.append(3);
+  ll1.append(2);
+  ll2.append(5);
+  ll2.append(8);
+  ll=ll1.zipLists(ll1,ll2);
+ expect(ll.toString()).toEqual("6 -> 5 -> 3 -> 8 -> 2 -> ");
 });
-});
-
-
+})
