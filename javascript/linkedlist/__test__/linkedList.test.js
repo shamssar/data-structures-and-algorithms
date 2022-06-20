@@ -1,6 +1,7 @@
 'use strict';
 
 const LinkedList = require('../linked-list/linkedList');
+const zipLists = require('../linked-list/function');
 
 describe("Can successfully instantiate an empty linked list", () => {
   it("creat a linklist", () => {
@@ -124,7 +125,7 @@ describe("Can successfully instantiate an empty linked list", () => {
     ll2.append(1);
     ll2.append(8);
     ll2.append(4);
-    ll=ll1.zipLists(ll1,ll2);
+    ll=zipLists(ll1,ll2);
    expect(ll.toString()).toBe("6 -> 1 -> 3 -> 8 -> 2 -> 4 -> ");
 });
 
@@ -137,7 +138,7 @@ it("Zip the two linked lists together, list2 had one more node", () => {
   ll2.append(5);
   ll2.append(8);
   ll2.append(4);
-  ll=ll1.zipLists(ll1,ll2);
+  ll=zipLists(ll1,ll2);
  expect(ll.toString()).toEqual("6 -> 5 -> 3 -> 8 -> 4 -> ");
 });
 
@@ -150,7 +151,7 @@ it("Zip the two linked lists together, list1 had one more node", () => {
   ll1.append(2);
   ll2.append(5);
   ll2.append(8);
-  ll=ll1.zipLists(ll1,ll2);
+  ll=zipLists(ll1,ll2);
  expect(ll.toString()).toEqual("6 -> 5 -> 3 -> 8 -> 2 -> ");
 });
 })
