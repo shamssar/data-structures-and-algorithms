@@ -1,11 +1,11 @@
 # validateBrackets(string)
-## Challenge Summary
+# Challenge Summary
 Create validateBrackets(string) function which takes string as a parameter and return boolean representing whether or not the brackets in the string are balanced.
 
-## Whiteboard Process
+# Whiteboard Process
 ![image](../asset/validateBrackets.png)
 
 
 
-## Test 
+# Test 
 ![image](../asset/validateBracketstest.png)
