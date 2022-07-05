@@ -1,7 +1,6 @@
 'use strict';
 
 const { BST } = require('../trees');
-
 let tree = new BST;
 tree.add(10);
 tree.add(8);
