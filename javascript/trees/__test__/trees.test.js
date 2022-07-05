@@ -1,53 +1,75 @@
 'use strict';
+const BinaryTree = require("../BinaryTree");
+const Node = require("../node ");
+const BinarySearchTree = require("../BinarySearchTree");
 
-const { BST } = require('../trees');
-let tree = new BST;
-tree.add(10);
-tree.add(8);
-tree.add(14);
-tree.add(5);
-tree.add(9);
-tree.add(12);
-tree.add(17);
+let tree=null;
 
-describe('Testing Binary Tree and Binary Search Tree Methods', () => {
-  it('can successfully instantiate an empty tree', () => {
-    let emptyTree = new BST;
+describe('TREES TEST',()=>{
 
-    expect(emptyTree.root).toBeNull();
-    expect(JSON.stringify(emptyTree)).toEqual('{"root":null}');
-  });
-  it('can successfully instantiate a tree with a single root node', () => {
-    let singleNodeTree = new BST;
-    singleNodeTree.add(10);
+    beforeAll(() => {
+        let one = new Node(1);
+        let two = new Node(2);
+        let three = new Node(3);
+        let four = new Node(4);
+        let five = new Node(5);
+        let six = new Node(6);
+        let seven = new Node(7);
+        let eight = new Node(8);
+        let nine = new Node(9);
 
-    expect(singleNodeTree.root.value).toEqual(10);
-  });
-  it('can successfully add a left child to a node', () => {
-    let leftNodeTree = new BST;
-    leftNodeTree.add(10);
-    leftNodeTree.add(8);
+        one.left = two;
+        one.right = three;
+        two.left = six;
+        six.right = seven;
+        seven.left = eight;
+        seven.right = nine;
+        three.left = four;
+        three.right = five;
 
-    expect(leftNodeTree.root.left.value).toEqual(8);
-  });
-  
-  it('can return a collection from a preorder traversal', () => {
+        tree = new BinaryTree(one);
+    });
 
-    let order = tree.preOrder();
-    expect(order).toEqual([10, 8, 5, 9, 14, 12, 17]);
+    it('Can successfully instantiate an empty tree',()=>{
+        const newTree = new BinaryTree();
+        expect(newTree.root).toBeNull();
+    })
+    it("Can successfully instantiate a tree with a single root node", () => {
+        let node = new Node(1);
+        let tree = new BinaryTree(node);
+        expect(tree.root.value).toEqual(1);
+      });
+      it(" can successfully add a left child and right child properly to a node", () => {
+        let node = new Node(2);
+        let tree = new BinarySearchTree(node);
+        tree.add(1, node);
+        tree.add(3, node);
+        expect(tree.root.left.value).toEqual(1);
+        expect(tree.root.right.value).toEqual(3);
+      });
+      test('Can successfully return a collection from a preorder traversal', () => {
+        let expectedOutput = [1, 2, 6, 7, 8, 9, 3, 4, 5];
+        let preOrder = tree.preOrder();
+        expect(preOrder).toEqual(expectedOutput);
+    });
+    test('Can successfully return a collection from an inorder traversal', () => {
+        let expectedOutput = [6, 8, 7, 9, 2, 1, 4, 3, 5];
+        let inOrder = tree.inOrder();
+        expect(inOrder).toEqual(expectedOutput);
+    });
+    test('Can successfully return a collection from a postorder traversal', () => {
+        let expectedOutput = [8, 9, 7, 6, 2, 4, 5, 3, 1];
+        let postOrder = tree.postOrder();
+        expect(postOrder).toEqual(expectedOutput);
+    });
 
-  });
-  it('can return a collection from a inorder traversal', () => {
-
-    let order = tree.inOrder();
-    expect(order).toEqual([5, 8, 9, 10, 12, 14, 17]);
-
-  });
-  it('can return a collection from a postorder traversal', () => {
-
-    let order = tree.postOrder();
-    expect(order).toEqual([5, 9, 8, 12, 17, 14, 10]);
-
-  });
-
-});
+    test('Can successfully return the max value in a tree', () => {
+        let output = 9;
+        let max = tree.findMax(tree.root);
+        expect(max).toEqual(output);
+    });
+    test('Can successfully return Exception in using findMax function on an empty tree', () => {
+        const newTree = new BinaryTree();
+        expect(newTree.findMax(newTree.root)).toEqual("Empty tree");
+    });
+})
