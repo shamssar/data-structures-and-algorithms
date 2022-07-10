@@ -3,8 +3,8 @@ Write a function that takes in a binary tree as an argument and returns an array
 
 # Whiteboard Process
 
-![image](./braedthboard.png)
+![image](./breadthboard.png)
 
 
 test 
-![image](./braedthtest.png)
+![image](./breadthtest.png)

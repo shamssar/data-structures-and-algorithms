@@ -1,5 +1,4 @@
 'use strict';
-const Queue=require("../stack-and-queue/queue/lib/queue");
 class BinaryTree{
 
     constructor(root=null){
@@ -54,18 +53,5 @@ class BinaryTree{
         }
     
     }
-        breadthFirst(tree){
-            let queue=new Queue();
-            let result=[];
-            queue.enqueue(tree.root);
-            while(queue.front!==null && queue.rear!==null){
-                let dequeued=queue.dequeue();
-                result.push(dequeued.value);
-                if(dequeued.left!==null) queue.enqueue(dequeued.left);
-                if(dequeued.right!==null) queue.enqueue(dequeued.right);
-            }
-            return result;
-        }
-    }
-    
+}
     module.exports=BinaryTree;
