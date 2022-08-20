@@ -1,9 +1,10 @@
 # Hashtables
- Hash table is one of the most important data structures in computing. A hash table (hash map) is a data structure used to implement an associative array, a structure that can map keys to values. A hash table uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found. In JavaScript we don’t have any built-in hash table.
+Hashtables are a data structure that utilize key value pairs, this means every Node or Bucket has both a key, and a value.
 
+The basic idea of a hashtable is the ability to store the key into this data structure, and quickly retrieve the value. This is done through what we call a hash.
 ## Challenge:
 
-Implement a Hashtable Class with the following methods:
+Implement a Hashtable Class with the following methods: set, get, contains, keys, hash.
 
 1.  set
 * Arguments: key, value
@@ -32,8 +33,5 @@ Should a given key already exist, replace its value from the value argument give
 * Returns: Index in the collection for that key
 
 ## Approach & Efficiency     
-* set: space O(1)/time O(1)
-* hash: space O(1)/time O(1)
-* contains: space O(1)/time O(1) - time O(n) if there is a collision
-
-* get: space O(1)/time O(1) - time O(n) if there is a collision   
+Time Complexity: O(1) 
+Space Complexity: O(1)
